@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/face-ai/static/css/main.eb5df3db.chunk.css",
-    "main.js": "/face-ai/static/js/main.95aa9b3d.chunk.js",
-    "main.js.map": "/face-ai/static/js/main.95aa9b3d.chunk.js.map",
+    "main.js": "/face-ai/static/js/main.4f500bf1.chunk.js",
+    "main.js.map": "/face-ai/static/js/main.4f500bf1.chunk.js.map",
     "runtime-main.js": "/face-ai/static/js/runtime-main.211f5ea3.js",
     "runtime-main.js.map": "/face-ai/static/js/runtime-main.211f5ea3.js.map",
     "static/css/2.31461e4f.chunk.css": "/face-ai/static/css/2.31461e4f.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.0c335e77.chunk.js",
     "static/css/main.eb5df3db.chunk.css",
-    "static/js/main.95aa9b3d.chunk.js"
+    "static/js/main.4f500bf1.chunk.js"
   ]
 }
