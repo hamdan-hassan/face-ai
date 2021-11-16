@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../Loader/Loader";
 
 class Register extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Register extends React.Component {
       email: "",
       password: "",
       name: "",
+      loading: false,
     };
   }
 
@@ -23,6 +25,7 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
+    this.setState({ loading: true });
     fetch("https://sleepy-beach-01060.herokuapp.com/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,6 +39,7 @@ class Register extends React.Component {
       .then((user) => {
         if (user.id) {
           this.props.loadUser(user);
+          this.setState({ loading: false });
           this.props.onRouteChange("home");
         } else {
           console.log("smth went wrong");
@@ -44,7 +48,9 @@ class Register extends React.Component {
   };
 
   render() {
-    return (
+    return this.state.loading ? (
+      <Loader />
+    ) : (
       <article className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>

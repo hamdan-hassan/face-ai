@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../Loader/Loader";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class Signin extends React.Component {
     this.state = {
       signInEmail: "",
       signInPassword: "",
+      loading: false,
     };
   }
 
@@ -18,6 +20,7 @@ class Signin extends React.Component {
   };
 
   onSubmitSignIn = () => {
+    this.setState({ loading: true });
     fetch("https://sleepy-beach-01060.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -31,6 +34,7 @@ class Signin extends React.Component {
         if (user.id) {
           console.log(user);
           this.props.loadUser(user);
+          this.setState({ loading: false });
           this.props.onRouteChange("home");
         }
       });
@@ -38,7 +42,9 @@ class Signin extends React.Component {
 
   render() {
     const { onRouteChange } = this.props;
-    return (
+    return this.state.loading ? (
+      <Loader />
+    ) : (
       <article className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>

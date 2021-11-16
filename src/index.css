@@ -1,8 +1,14 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: "Courier New";
-  background-color: #7ee8fa;
-  background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+  background: rgb(195, 221, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(195, 221, 214, 1) 100%,
+    rgba(111, 109, 149, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 button {
